@@ -1,0 +1,29 @@
+###Readings: Cloud Identity and Access Management (IAM) with AWS
+
+[Lessons Learned](https://www.zscaler.com/resources/white-papers/capital-one-data-breach.pdf)
+
+1. What were the three commands used for the attack?
+
+    The three commands issued for the attack Code:
+
+    Get Credentials - First command when executed obtained security credentials known as ****-WAF-Role account (an IAM account) for an
+    elevated role access AWS Web Application Firewall (WAF)
+
+    List Buckets - Second command, when executed, used the security credentials *****-WAF-Role account to list files and folders (aka S3 buckets)
+        
+    Download Files - Third command, when executed used the *****-WAF-Role account to download files that were accessible by the credentials.
+
+
+2. What misconfiguration of AWS components allowed the attacker to access sensitive data?
+
+    According to AWS the attack occurred due to a misconfigured error at the application layer of a firewall installed by the financial institute. It also stated it was exacerbated by permissions that were likely broader than needed.
+
+    "In summary, the most likely root cause of the attack was a poor security architecture design that exposed S3 buckets via AWS WAF/EC2 instance to anyone with an IAM role."
+
+3. What are two of the AWS Governance practices that could have prevented such attack?
+
+    AWS recommends a review of all access paths and permissions form human identities or non-human identities to data storage. They also recommend Cloud Infrastructure Management which automates the detection of over privileged identities and over-exposed data.
+
+    AWS lists a few basics here: https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/. 
+    
+    Zscaler Workload Posture with Cloud Security Posture Management (CSPM) automates policies and provides security and compliance views across all AWS.
